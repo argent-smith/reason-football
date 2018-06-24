@@ -57,10 +57,11 @@ module Discernment = {
       Matching.(
         switch (exact_match(bet, real)) {
         | true => Won
-        | false => switch (balance_match(bet, real)) {
-                   | true => Guessed
-                   | false => Lost
-                   }
+        | false =>
+          switch (balance_match(bet, real)) {
+          | true => Guessed
+          | false => Lost
+          }
         }
       )
     };
